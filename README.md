@@ -17,6 +17,25 @@ The digital self-care app that helps you predict the risk of any heart & diabete
 #### Medication Reminder for Patient 
 Manage Health details to access anytime, anywhere and trend health progress. Make yourself aware and understand of how to maintain personal Health.
 
+## Dependencies
+- Frontend
+    * React
+    * chart.js
+    * hamburger react
+    * axios
+    * dotenv
+    * js cookie
+
+- Backend
+    * Express
+    * Nodejs
+    * bcrypt
+    * dotenv
+    * nodemon
+    * mongoose
+    * nodemailer
+    * shortid
+
 ## Getting Started
 
 #### 1. Clone the Repository

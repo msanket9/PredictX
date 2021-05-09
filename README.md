@@ -45,14 +45,8 @@ Run this command in main (/) directory
   
 <img src="Images/home.png" alt="Home Page"> 
   
-## Doctors Dashboard
-  
-<img src="Images/docdash.png" alt="Doctors Dashboard"> 
-
 ## Patients Dashboard
-
 <img src="Images/patient-dash.png" alt="Patients Dashboard">
   
-
-
-
+## Doctors Dashboard
+<img src="Images/docdash.png" alt="Doctors Dashboard"> 

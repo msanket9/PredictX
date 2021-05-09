@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+:root {
+  --primary-color: #00a459;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+*::-webkit-scrollbar {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+
+  width: 10px;
+  background-color: #f1fff3;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: 1px solid white;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+body::-webkit-scrollbar {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+
+  width: 10px;
+  background-color: #f1fff3;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: 1px solid white;
+  border-radius: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: "Open Sans";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

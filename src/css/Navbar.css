@@ -1,0 +1,83 @@
+.navbar {
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+}
+
+.navbar__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.navbar__items img {
+  max-width: 120px;
+}
+
+.navbar__buttons {
+  padding: 20px;
+}
+
+.navbar__buttons a {
+  margin: 0 10px;
+  text-decoration: none;
+  padding: 6px 15px;
+  color: white;
+  font-weight: 400;
+  border-radius: 7px;
+  background-color: var(--primary-color);
+  transition: 0.3s;
+}
+.navbar__buttons a:last-child:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+#login {
+  background-color: transparent;
+  color: black;
+  border: solid 1px var(--primary-color);
+}
+#login:hover {
+  color: white;
+  background-color: var(--primary-color);
+}
+/* ----------- iPhone 4 and 4S / Mobile ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .navbar__items img {
+    max-width: 120px;
+    margin: 10px;
+  }
+  .navbar__buttons {
+    padding: 0;
+  }
+  .navbar__buttons a {
+    margin: 0 10px;
+    padding: 3px 10px;
+  }
+  .navbar__items {
+    margin: 0;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air / Tablets ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .navbar__items img {
+    max-width: 150px;
+    margin: 10px;
+  }
+  .navbar__buttons {
+    padding: 0;
+  }
+
+  .navbar__items {
+    margin: 0 100px;
+  }
+}

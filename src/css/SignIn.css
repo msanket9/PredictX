@@ -1,0 +1,547 @@
+/* main div */
+.signin__page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(251, 248, 248, 0.178);
+}
+
+/* Left Section */
+.signin__left-section {
+  width: 40%;
+  height: 100vh;
+  left: 0;
+  background-color: #f3f3f3;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right Section */
+.signin__right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(213, 248, 248); */
+  height: 100vh;
+  width: 60%;
+  right: 0;
+}
+
+/* Form inside right section*/
+.signin_-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  width: 80%;
+  height: 90%;
+}
+
+/* First Item in form (name, email)*/
+.form__item-1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 60px;
+  padding: 20px 0px;
+}
+
+/* Second Item in form (Password)*/
+.form__item-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 60px;
+  padding: 0 0 15px 0px;
+}
+
+/* label in first item of form */
+.form__item-1 label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Signin text at the top on left side */
+.signin-text {
+  width: 100%;
+}
+
+/* h1 tage in signin-text */
+.signin-text h1 {
+  padding: 0px 0px 20px 0px;
+  font-weight: 400;
+  font-size: 3vw;
+  color: #535353;
+}
+
+.signin-text h5 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #535353;
+}
+/* logo image */
+.signin__left-section-item1 img {
+  width: 20%;
+  height: auto;
+}
+
+input[type="text"],
+input[type="password"] {
+  /* Firefox, Chrome, Opera */
+  padding-left: 10px;
+}
+
+.signin_-form input:focus {
+  outline: none;
+}
+
+.signin_-form label {
+  color: #535353;
+  font-size: 1.03rem;
+  font-weight: 400;
+}
+
+.signin_-form input {
+  border: 2px solid var(--primary-color);
+  height: 2rem;
+  border-radius: 10px;
+  height: 45px;
+  font-size: 0.85rem;
+  caret-color: var(--primary-color);
+}
+
+.form__item-2-pass input {
+  padding: 15px;
+}
+
+.signin-text h1,
+h5 {
+  margin: 0 60px;
+}
+
+.signin_-form button {
+  margin: 0 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 10vw;
+  border: none;
+  font-size: 1.1em;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.signin_-form p {
+  margin: 0 60px;
+  font-size: small;
+}
+
+#login-text {
+  margin-top: 0px;
+}
+
+.form__item-2__signin {
+  margin: 0 60px;
+}
+.form__item-2__signin a{
+  float:right;
+  margin: 5px 2px;
+  font-size: .85em !important;
+
+}
+.form__item-2__signin input {
+  margin-top: 5px;
+}
+.form__item-2__signin .red {
+  border: 2px solid red;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  caret-color: var(--primary-color);
+}
+.form__item-2__signin input:focus {
+  border: 2px solid var(--primary-color);
+}
+.userType__buttons {
+  margin: 0 60px;
+  margin-top: 20px;
+  height: auto;
+}
+
+.signin_-form a {
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.ut-button-bg{
+  background-color: var(--primary-color) !important;
+  box-shadow: none !important;
+  color: white !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.userType__buttons a {
+  border: 1px solid var(--primary-color);
+  padding: 10px 50px;
+  margin: 0 20px 0 0;
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.userType__buttons a:hover{
+  background-color: var(--primary-color);
+  color: white;
+}
+.sign-in_forgotpass {
+  margin: 10px 60px;
+}
+.sign-in_forgotpass a {
+  float: right;
+  font-size: 0.9em;
+}
+@media only screen and (max-width: 1200px) {
+  form {
+    justify-content: center;
+  }
+  .sign-in_forgotpass {
+    margin: 10px 20px;
+  }
+
+  .signin_-form {
+    width: 100%;
+  }
+
+  .signin_-form button {
+    width: 20vw;
+  }
+
+  #login-text {
+    margin-top: 5px;
+    text-align: start;
+  }
+
+  .signin__left-section {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signin__left-section img {
+    width: 40vw;
+    object-fit: fill;
+  }
+
+  .signin__left-section-item1 img {
+    width: 40%;
+    /* height: auto; */
+    object-fit: fill;
+  }
+  .signin__left-section-item1 {
+    margin-bottom: 60px;
+  }
+}
+
+/* ----------- iPhone 4 and 4S / Mobile ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+  .sign-in_forgotpass {
+    margin: 10px 20px;
+  }
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 9999999999;
+  }
+
+  #login-text {
+    margin-bottom: 10px;
+  }
+
+  .form__item-2 {
+    margin: 0 20px;
+  }
+  .signin_-form {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .signin_-form button {
+    width: auto;
+  }
+  .signin__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signin-text {
+    margin: auto;
+  }
+  .signin-text h1 {
+    font-size: 10vw;
+  }
+
+  .userType__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+    margin: 23px 60px 0px 60px;
+  }
+
+  .userType__buttons a {
+    margin: 0 2px;
+    padding: 10px 27px;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: Landscape) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  #login-text {
+    margin-bottom: 5px;
+  }
+
+  .signin_-form {
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (width: 320px) and (height: 568px) {
+  .signin_-form {
+    width: auto;
+    margin-bottom: 30px;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signin_-form {
+    width: auto;
+    margin-bottom: 25px;
+  }
+
+  button {
+    width: auto;
+  }
+  .signin__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signin-text h1 {
+    font-size: 5vw;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air / Tablets ----------- */
+
+/* Portrait and Landscape */
+
+@media only screen and (min-device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signin_-form {
+    width: auto;
+    margin-bottom: 20px;
+  }
+  button {
+    width: auto;
+  }
+  .signin__left-section-item1 img {
+    width: 30vw;
+  }
+
+  .signin__left-section > img {
+    width: 50vw;
+    object-fit: fill;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signin_-form {
+    width: 80%;
+    margin-bottom: 25px;
+  }
+  button {
+    width: auto;
+  }
+}
+
+/* @media only screen and (max-width: 780px) {
+    .signin__page{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signin__left-section {
+        width: 100vw;
+    }
+
+    .signin__right-section {
+      width: 100vw;
+    }
+
+    .signin_-form {
+      width: 100vw;
+    }
+
+} */
+
+@media only screen and (max-width: 780px) {
+  .signin__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+    overflow-x: hidden;
+  }
+
+  .signin__left-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .signin__right-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 9999999999;
+  }
+
+  #login-text {
+    margin-bottom: 10px;
+  }
+  .form__item-1 {
+    margin: 0 20px !important;
+  }
+  .form__item-2__signin {
+    margin: 0 20px !important;
+  }
+  .signin_-form {
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+  .signin_-form button {
+    width: auto;
+  }
+
+  .signin_-form p {
+    align-self: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .signin__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signin-text {
+    margin: 0 20px;
+    text-align: start;
+  }
+  .signin-text h1 {
+    font-size: 10vw;
+    margin: 0%;
+  }
+  .signin-text h5 {
+    margin: 0%;
+  }
+
+  .userType__buttons {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .signin_-form button {
+    margin: 0 20px;
+    margin-top: 10px;
+    padding: 10px 50px;
+  }
+
+  .userType__buttons a {
+    margin: 0 2px;
+    padding: 10px 27px;
+  }
+}

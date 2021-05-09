@@ -1,0 +1,221 @@
+/* main div */
+.choose-user__page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(251, 248, 248, 0.178);
+}
+/* Left Section */
+.choose-user__left-section {
+  width: 50%;
+  height: 100vh;
+  left: 0;
+  background-color: #f3f3f3;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* logo image */
+.choose-user__left-section-item1 img {
+  width: 20%;
+  height: auto;
+}
+
+.choose-user__right-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  padding: 20px;
+}
+
+.choose-user__right-section img {
+  margin-bottom: 20px;
+}
+.choose-user__right-section a {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.userType__choice a {
+  padding: 10px 50px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+}
+
+.userType__choice {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+}
+
+.userType__choice p {
+    margin: 20px 0 20px 0;
+}
+.choose-user__right-section h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #535353;
+}
+
+@media only screen and (max-width: 1200px) {
+  .choose-user__left-section {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .choose-user__left-section img {
+    width: 40vw;
+    object-fit: fill;
+  }
+
+  .choose-user__left-section-item1 img {
+    width: 40%;
+    /* height: auto; */
+    object-fit: fill;
+  }
+  .choose-user__left-section-item1 {
+    margin-bottom: 60px;
+  }
+}
+
+/* ----------- iPhone 4 and 4S / Mobile ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .choose-user__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .choose-user__left-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .choose-user__right-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 9999999999;
+  }
+  .choose-user__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+
+  .choose-user__right-section > img {
+    width: 300px;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: Landscape) {
+  .choose-user__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .choose-user__left-section {
+    width: 100vw;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .choose-user__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .choose-user__left-section {
+    width: 100vw;
+  }
+  .choose-user__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air / Tablets ----------- */
+
+/* Portrait and Landscape */
+
+@media only screen and (min-device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .choose-user__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .choose-user__left-section {
+    width: 100vw;
+  }
+
+  .choose-user__left-section-item1 img {
+    width: 30vw;
+  }
+
+  .choose-user__left-section > img {
+    width: 50vw;
+    object-fit: fill;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .choose-user__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .choose-user__left-section {
+    width: 100vw;
+  }
+}
+
+
+@media only screen and (max-width: 780px) {
+    .choose-user__page{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .choose-user__left-section {
+        width: 100vw;
+    }
+
+    .choose-user__right-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

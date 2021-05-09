@@ -1,0 +1,587 @@
+/* main div */
+.signup__page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(251, 248, 248, 0.178);
+}
+
+/* Left Section */
+.signup__left-section {
+  width: 40%;
+  height: 100vh;
+  left: 0;
+  background-color: #f3f3f3;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right Section */
+.signup__right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 60%;
+  right: 0;
+}
+
+/* Form inside right section*/
+.signup_-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  width: 70%;
+  height: 90%;
+}
+
+/* First Item in form (name, email)*/
+.form__item-1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 60px;
+  padding: 0px;
+}
+
+/* Second Item in form (Password)*/
+.form__item-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0px;
+  padding: 0;
+}
+
+/* Thrid item int the form (checkbox, terms and conditions) */
+.form__item-3 {
+  display: flex;
+  align-items: center;
+  margin: 0 60px;
+}
+/* label in first item of form */
+.form__item-1 label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Both password labels */
+.form__item-2 .form__item-2-pass label {
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Both password inputs */
+.form__item-2 .form__item-2-pass input {
+  width: 100%;
+}
+
+/* Parent divs of password input and label */
+.form__item-2-pass {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+/* Check box */
+.form__item-3 label {
+  margin-left: 20px;
+}
+
+/* Signup text at the top on left side */
+.signup-text {
+  width: 100%;
+}
+
+/* h1 tage in signup-text */
+.signup-text h1 {
+  padding: 0px 0px 20px 0px;
+  font-weight: 400;
+  font-size: 3vw;
+  color: #535353;
+}
+.signup-text h5 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #535353;
+}
+.signup-text p {
+  font-weight: 200;
+  font-size: 0.9rem;
+  color: #535353;
+}
+/* logo image */
+.signup__left-section-item1 img {
+  width: 20%;
+  height: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  /* Firefox, Chrome, Opera */
+  padding-left: 10px;
+}
+.signup_-form input:focus {
+  outline: none;
+}
+.signup_-form label {
+  color: #535353;
+  font-size: 1.03rem;
+  font-weight: 400;
+}
+.signup_-form input {
+  border: 2px solid var(--primary-color);
+  height: 45px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  caret-color: var(--primary-color);
+}
+.form__item-2-pass input {
+  padding: 15px;
+}
+
+.signup-text h1,
+h5 {
+  margin: 0 60px;
+}
+
+.signup_-form button {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: fit-content;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.signup_-form p {
+  margin: 0 60px;
+  font-size: small;
+}
+
+#login-text {
+  margin-top: 0;
+  color: #535353;
+}
+
+.signup_-form a {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .form__item-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__item-2 input {
+    max-width: 50vw;
+  }
+
+  form {
+    justify-content: center;
+  }
+
+  button {
+    width: 20vw;
+  }
+
+  .signup_-form {
+    width: 100%;
+  }
+
+  #login-text {
+    margin-top: 5px;
+    text-align: start;
+  }
+
+  .form__item-2 .form__item-2-pass:last-child {
+    margin-top: 10px;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    width: 100%;
+  }
+  .form__item-2-pass {
+    width: 100%;
+  }
+  .signup__left-section {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signup__left-section img {
+    width: 40vw;
+    object-fit: fill;
+  }
+
+  .signup__left-section-item1 img {
+    width: 40%;
+    /* height: auto; */
+    object-fit: fill;
+  }
+  .signup__left-section-item1 {
+    margin-bottom: 60px;
+  }
+}
+
+/* ----------- iPhone 4 and 4S / Mobile ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signup__left-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .signup__right-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 9999999999;
+    margin-top: 7vh;
+  }
+
+  #login-text {
+    margin-bottom: 10px;
+  }
+
+  .signup_-form {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .form__item-1 {
+    margin: 0 30px;
+  }
+
+  .form__item-3 {
+    font-size: small;
+    margin: 0 20px;
+  }
+
+  .form__item-2 {
+    margin: 0 20px;
+  }
+
+  .form__item-2-pass {
+    width: 100%;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    min-width: 100%;
+  }
+
+  .signup__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signup-text h1 {
+    font-size: 10vw;
+  }
+
+  .signup_-form .signup-text h1 {
+    margin: 0 20px;
+  }
+
+  .signup_-form .signup-text h5 {
+    margin: 0 20px;
+    margin-bottom: 10px;
+  }
+  .signup_-form .signup-text p {
+    margin: 0 20px;
+  }
+  .signup_-form .form__item-1 {
+    margin: 0 20px;
+  }
+
+  .signup_-form form button {
+    margin: 10px 0px 10px 20px;
+  }
+
+  .signup_-form p {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+@media only screen and (width: 320px) and (height: 568px) {
+  .signup_-form {
+    width: auto;
+    margin-bottom: 30px;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signup__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signup__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signup_-form {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .form__item-3 {
+    font-size: small;
+  }
+  .form__item-2-pass {
+    width: 100%;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    min-width: 100%;
+  }
+  .signup_-form button {
+    width: auto;
+  }
+  .signup__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signup-text h1 {
+    font-size: 5vw;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air / Tablets ----------- */
+
+/* Portrait and Landscape */
+
+@media only screen and (min-device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signup__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signup__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signup_-form {
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .form__item-3 {
+    font-size: small;
+  }
+  .form__item-2-pass {
+    width: 100%;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    min-width: 100%;
+  }
+  .signup_-form button {
+    width: auto;
+  }
+  .signup__left-section-item1 img {
+    width: 30vw;
+  }
+
+  .signup__left-section > img {
+    width: 50vw;
+    object-fit: fill;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+  }
+
+  .signup__left-section {
+    width: 100vw;
+    height: fit-content;
+  }
+  .signup__right-section {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .signup_-form {
+    width: 80%;
+    margin-bottom: 25px;
+  }
+  .form__item-3 {
+    font-size: small;
+  }
+  .form__item-2-pass {
+    width: 100%;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    min-width: 100%;
+  }
+  .signup_-form button {
+    width: auto;
+  }
+  .signup_-form {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(251, 248, 248, 0.178);
+    overflow-x: hidden;
+  }
+
+  .signup__left-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 1;
+  }
+  .signup__right-section {
+    width: 100vw;
+    height: fit-content;
+    z-index: 9999999999;
+    margin-top: 7vh;
+  }
+
+  #login-text {
+    margin-bottom: 10px;
+  }
+
+  .signup_-form {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .form__item-1 {
+    margin: 0 30px;
+  }
+
+  .form__item-3 {
+    font-size: small;
+    margin: 0 20px;
+  }
+
+  .form__item-2 {
+    margin: 0 20px;
+  }
+
+  .form__item-2-pass {
+    width: 100%;
+  }
+
+  .form__item-2 .form__item-2-pass input {
+    min-width: 100%;
+  }
+
+  .signup__left-section > img {
+    width: 70vw;
+    object-fit: fill;
+  }
+  .signup-text h1 {
+    font-size: 10vw;
+  }
+
+  .signup_-form .signup-text h1 {
+    margin: 0 20px;
+  }
+
+  .signup_-form .signup-text h5 {
+    margin: 0 20px;
+    margin-bottom: 10px;
+  }
+  .signup_-form .signup-text p {
+    margin: 0 20px;
+  }
+  .signup_-form .form__item-1 {
+    margin: 0 20px;
+  }
+
+  .signup_-form form button {
+    margin: 10px 0px 10px 20px;
+  }
+
+
+  /* Both password labels */
+  .form__item-2 .form__item-2-pass label {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  /* Both password inputs */
+  .form__item-2 .form__item-2-pass input {
+    width: 100%;
+  }
+
+  .form__item-2 {
+    margin: 0 20px !important;
+  }
+  .signup_-form p {
+    /* text-align: center; */
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .signup__page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup__left-section {
+    width: 100vw;
+  }
+
+  .signup__right-section {
+    width: 100vw;
+  }
+
+  .signup_-form {
+    width: 100vw;
+  }
+
+  .signup-text {
+    padding: 20px 20px 0 0px;
+  }
+}

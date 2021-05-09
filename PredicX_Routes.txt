@@ -1,0 +1,67 @@
+** auth.js **
+1] Signup route (auth/signup)
+->	Used by the user to signup.
+
+2] Activation Route (auth/activate/:token)
+-> Once the user signups he/she will receive an email which will contain the token
+   this token will be passed to this activation route which will verify the token and add the user.
+   
+3] Signin Route (auth/singin)
+-> Will be used by the user to signin using his/her email address and password.
+
+4] Signout Route (auth/signout)
+-> signout
+
+5] Forgot Password Route (auth/forgotpassword)
+-> Helps the user to change his/her password. Generates a token which is sent through email.Once 
+   verified is sent to changepassword route with he token.
+   
+6] Change Password Route (auth/changepassword/:token)
+-> Will get the token from the email form and will change the users password by decoding the token.
+
+** doctor.js **
+1] Add Patient Notification (doctor/addpatientnotification)
+-> Send a notification to the patient using the patients email Id which will be accepted by the 
+   patient.
+
+2] Add Doctor Id to Patient (doctor/adddoctor/:docid)
+-> Adds the doctors id to the doctors array in patients model and vise versa
+   once the patient accepts the request sent by the doctor.
+
+3] Doctors Patients (doctor/mypatients)
+-> just returns all the patients that have subscribed to the doctor.
+
+4] Delete Patient (doctor/deletepatient/:id)
+-> deletes the patient from the doctors model.
+
+5] Deactivate Route (doctor/deactivate)
+-> Deactivates the doctors account.
+
+** patient.js **
+1] Add Medical Record (patient/addmemrecord)
+-> Once the patients enter his medical records it will be added to the model using this route.
+
+2] Edit Medical Record (patient/editmedrecord)
+-> Helps to edit the record.
+
+3] Get Medical Records (patient/medrecord/:id)
+-> returns all the medical of the patient using the id provided in the parameter.
+
+4] Add Dosage Route (patient/adddosage)
+-> Adds dosage to the current users dosage box (If not present) 
+   using the med and time provided through body.
+
+5] Delete Dosage Route (patient/deletedosage/:name)
+-> Deletes the dosage from the users dosage box if present.
+
+6] My Dosage Route (patient/mydosage)
+-> Lists all the dosages in the dosage box of the user.
+
+7] Edit Dosage Route (patient/editdosage)
+-> Allows the patient to edit the dosage.
+
+8] Delete doctor route (patient/deletedoctor/:id)
+-> Allows the patient to unsubscribe the doctor.
+
+9] Deactivate Route (patient/deactivate)
+-> Allows the patient to deactivate the account.

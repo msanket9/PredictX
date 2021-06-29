@@ -235,9 +235,9 @@ body::-webkit-scrollbar-track {
 
   .sidebar p {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     color: #535353;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
     width: 50%;
     align-self: center;

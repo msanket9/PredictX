@@ -38,7 +38,7 @@ body::-webkit-scrollbar-track {
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .desktop-nav-button {
@@ -93,7 +93,7 @@ body::-webkit-scrollbar-track {
   .doctorDashboard main {
     margin: 0px 0px 10px 0px;
     position: relative;
-    width: 90%;
+    width: 100%;
     height: 100vh;
     /* background-color: #f5f5f5; */
     background-color: white;
@@ -105,7 +105,7 @@ body::-webkit-scrollbar-track {
 
   .doctorDashboard__main {
     /* margin: 60px 0px 0px 290px; */
-    margin: 60px 0px 0px 20%;
+    margin: 60px 0px 0px 300px;
     padding: 20px;
     visibility: visible;
     -webkit-transition: all 0.2s linear;
@@ -140,11 +140,11 @@ body::-webkit-scrollbar-track {
     color: #535353;
   }
 
-  .patientsList {
+  .sidebar {
     display: block;
     position: static;
     /* width: 270px; */
-    width: 15%;
+    width: 300px;
     height: 100%;
     margin-top: 60px;
     padding: 20px 0 20px 0;
@@ -155,8 +155,10 @@ body::-webkit-scrollbar-track {
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     transform: translateZ(0);
-    z-index: 10;
-    box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.16);
+    z-index: 4;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.16);
+    overflow: hidden;
   }
 
   .patients--name {
@@ -169,22 +171,34 @@ body::-webkit-scrollbar-track {
     /* box-shadow: rgba(0, 0, 0, 0.5) 0 1px 3px; */
     cursor: pointer;
     padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 500ms;
+  }
+
+  .patients--name:hover {
+    background-color: var(--primary-color) !important;
   }
 
   .patients--name li {
     margin: 0 20px;
   }
 
-  .patientsList--item {
+  .sidebar--item {
     margin-top: 15px;
     width: 100%;
     overflow: auto;
     overflow-x: hidden;
-    direction: rtl;
-    height: 70vh;
+    /* display: flex;
+    justify-content: center; */
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 500ms;
   }
 
-  .patientsList--item img {
+  .sidebar--item img {
     width: 30px;
   }
 
@@ -195,6 +209,23 @@ body::-webkit-scrollbar-track {
     position: static;
   }
 
+  #nav-buttons-ai {
+    display: flex;
+    justify-content: center;
+  }
+
+  #nav-buttons-ai:hover {
+    background-color: var(--primary-color) !important;
+  }
+  #nav-buttons-pa-list:hover {
+    background-color: var(--primary-color) !important;
+  }
+
+  #nav-buttons-pa-list {
+    display: flex;
+    justify-content: center;
+  }
+
   #logo {
     max-width: 180px;
     height: auto;
@@ -202,18 +233,38 @@ body::-webkit-scrollbar-track {
     margin-bottom: 10px;
   }
 
-  .patientsList p {
+  .sidebar p {
     text-align: center;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 0.7em;
+    padding: 15px;
+    color: #535353;
+    font-size: 0.9rem;
     font-weight: 700;
     width: 50%;
     align-self: center;
-    margin: 0 auto;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 1px 3px;
+  }
+
+  #add-patient-button {
+    cursor: pointer;
+  }
+
+  .patientsList {
+    position: absolute;
+    /* width: 270px; */
+    width: 300px;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    padding: 20px 0 20px 0;
+    visibility: visible;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    transform: translate3d(0%, 0%, 0px);
+    z-index: 1;
+    background-color: white;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.16);
+    left: 0px;
   }
 
   /* Records */
@@ -312,10 +363,10 @@ body::-webkit-scrollbar-track {
   #graph1 {
     grid-column: 1/3;
   }
-
+  /* 
   #graph2 {
     grid-column: 1/2;
-  }
+  } */
 
   #graph4 {
     grid-column: 1/3;
@@ -327,8 +378,8 @@ body::-webkit-scrollbar-track {
     height: 500px;
     padding: 20px;
     background-color: white;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 10px 0px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 7px 0px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
@@ -346,15 +397,6 @@ body::-webkit-scrollbar-track {
     min-width: 100%;
   }
 
-  .ai {
-    position: static;
-    width: 18%;
-    margin-top: 60px;
-    padding: 25px;
-    text-align: center;
-    color: #535353;
-  }
-
   .ai h6 {
     font-size: 1.4em;
     font-weight: 700;
@@ -363,18 +405,18 @@ body::-webkit-scrollbar-track {
 
   .ai__grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 20px;
+    grid-template-columns: 350px 350px;
     grid-gap: 20px;
+    padding: 50px;
   }
 
   .ai__grid--item {
     display: flex;
     flex-direction: column;
     min-width: 0%;
-    height: 100px;
     min-height: 200px;
     padding: 20px;
+    text-align: center;
   }
 
   .ai__grid--item p {
@@ -396,12 +438,6 @@ body::-webkit-scrollbar-track {
 
   .prediction--grid p {
     font-size: 1em;
-  }
-
-  .desktop-right-sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
   }
 
   .add__patient__grid--item {
@@ -456,6 +492,36 @@ body::-webkit-scrollbar-track {
     margin: 4px;
   }
 
+  .grid-popup-overlay {
+    position: fixed;
+    margin-left: 15%;
+    width: 85%;
+    top: 60px;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 0;
+    z-index: -19;
+  }
+
+  .desktop-ai-popup {
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 30px;
+  }
+
   /* None */
 
   .doctorDashboard nav {
@@ -466,21 +532,58 @@ body::-webkit-scrollbar-track {
 @media only screen and (max-width: 1304px) {
   .patientsList {
     position: absolute;
-    left: -350px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    transform: translateZ(0);
     z-index: 100;
+    width: 300px;
+    z-index: 2;
+  }
+
+  .patientsList {
+    position: absolute;
+    /* width: 270px; */
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    padding: 20px 0 20px 0;
+    visibility: visible;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    transform: translate3d(0%, 0%, 0px);
+    background-color: white;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.16);
+    left: 0px;
+  }
+
+  #graph1 {
+    grid-column: 1/2;
+  }
+
+  #graph2 {
+    grid-column: 2/3;
+  }
+
+  #graph3 {
+    grid-column: 1/3;
+  }
+
+  #graph4 {
+    grid-column: 1/2;
+  }
+
+  #graph6 {
+    grid-column: 1/3;
   }
 
   .doctorDashboard main {
-    width: 70%;
+    width: 100%;
   }
 
   .doctorDashboard__main {
-    margin-left: 0px;
+    margin-left: 300px;
     -webkit-transition: margin-left 0.4s ease;
     -moz-transition: margin-left 0.4s ease;
     -o-transition: margin-left 0.4s ease;
@@ -494,13 +597,51 @@ body::-webkit-scrollbar-track {
   }
 
   .graphs__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     margin-top: 150px;
   }
 
-  .ai {
-    width: 30%;
+  .ai__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 0px;
+  }
+
+  .sidebar {
+    width: 300px;
+  }
+
+  .grid-popup-overlay {
+    position: fixed;
+    width: calc(100% - 300px);
+    right: 0;
+    top: 60px;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 0;
+    z-index: -19;
+  }
+
+  .desktop-ai-popup {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    align-self: center;
+    height: fit-content;
+    margin: 20px;
+    padding: 30px;
   }
 }
 
@@ -523,6 +664,10 @@ body::-webkit-scrollbar-track {
     padding: 10px;
     position: relative;
     width: 100%;
+  }
+
+  .doctorDashboard__main {
+    margin-left: 0px;
   }
 
   /* Patients Name */
@@ -644,6 +789,7 @@ body::-webkit-scrollbar-track {
     margin: 10px;
     top: 0px;
     padding: 0;
+    align-items: center;
   }
 
   .backdrop {
@@ -778,6 +924,7 @@ body::-webkit-scrollbar-track {
     margin: 10px;
     padding: 30px;
     text-align: center;
+    z-index: 1;
   }
 
   .ai h6 {
@@ -794,7 +941,12 @@ body::-webkit-scrollbar-track {
 
   .prediction--grid {
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .prediction--grid p {
+    font-size: 1.3rem;
   }
 
   .prediction--grid img {
@@ -849,6 +1001,14 @@ body::-webkit-scrollbar-track {
     margin: 0 auto;
   }
 
+  .grid-popup-overlay {
+    position: fixed;
+    left: 0;
+    z-index: 0;
+    opacity: 1;
+    background-color: transparent;
+  }
+
   /* None */
 
   .desktop-navbar {
@@ -870,4 +1030,10 @@ body::-webkit-scrollbar-track {
   #hr {
     display: none;
   }
+
+  .sidebar {
+    display: none;
+  }
 }
+
+/* // test */

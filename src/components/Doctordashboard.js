@@ -32,12 +32,13 @@ class DoctorDashboard extends React.Component {
     super(props);
 
     this.setActivePatient = this.setActivePatient.bind(this);
-    this.toogleSidebar = this.toogleSidebar.bind(this);
+    this.toogleSidebar = this.tooglePatientsListDesktop.bind(this);
     // this.toogleAddPatientForm = this.toogleAddPatientForm.bind(this);
     this.onSubmitPatientForm = this.onSubmitPatientForm.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.toogleAddPatientsDesktop = this.toogleAddPatientsDesktop.bind(this);
     this.onLogout = this.onLogout.bind(this);
+    this.toogleDesktopAi = this.toogleDesktopAi.bind(this);
 
     /** Mobile **/
     this.toogleDashboard = this.toogleDashboard.bind(this);
@@ -74,7 +75,7 @@ class DoctorDashboard extends React.Component {
       patientListToggle: false,
       addPatientsToogle: false,
       aiToggle: false,
-      sidebarToogle: false,
+      sidebarToogle: true,
       desktopAddPatientToogle: false,
     };
   }
@@ -115,23 +116,28 @@ class DoctorDashboard extends React.Component {
                       var data = {
                         age: { value: this.state.ActiveUserData.age },
                         bmi: { value: this.state.ActiveUserData.bmi },
-                        cholestrol: this.state.ActiveUserData.cholestrol[
-                          this.state.ActiveUserData.cholestrol.length - 1
-                        ],
-                        diastolicPressure: this.state.ActiveUserData
-                          .diastolicPressure[
-                          this.state.ActiveUserData.diastolicPressure.length - 1
-                        ],
-                        heartRate: this.state.ActiveUserData.heartRate[
-                          this.state.ActiveUserData.heartRate.length - 1
-                        ],
-                        systolicPressure: this.state.ActiveUserData
-                          .systolicPressure[
-                          this.state.ActiveUserData.systolicPressure.length - 1
-                        ],
-                        glucoseConc: this.state.ActiveUserData.glucoseConc[
-                          this.state.ActiveUserData.glucoseConc.length - 1
-                        ],
+                        cholestrol:
+                          this.state.ActiveUserData.cholestrol[
+                            this.state.ActiveUserData.cholestrol.length - 1
+                          ],
+                        diastolicPressure:
+                          this.state.ActiveUserData.diastolicPressure[
+                            this.state.ActiveUserData.diastolicPressure.length -
+                              1
+                          ],
+                        heartRate:
+                          this.state.ActiveUserData.heartRate[
+                            this.state.ActiveUserData.heartRate.length - 1
+                          ],
+                        systolicPressure:
+                          this.state.ActiveUserData.systolicPressure[
+                            this.state.ActiveUserData.systolicPressure.length -
+                              1
+                          ],
+                        glucoseConc:
+                          this.state.ActiveUserData.glucoseConc[
+                            this.state.ActiveUserData.glucoseConc.length - 1
+                          ],
                       };
 
                       axios
@@ -150,19 +156,23 @@ class DoctorDashboard extends React.Component {
                       // Diabetes
                       var data2 = {
                         age: { value: this.state.ActiveUserData.age },
-                        num_preg: this.state.ActiveUserData.numPreg[
-                          this.state.ActiveUserData.numPreg.length - 1
-                        ],
-                        glucose_conc: this.state.ActiveUserData.glucoseConc[
-                          this.state.ActiveUserData.glucoseConc.length - 1
-                        ],
-                        diastolic_bp: this.state.ActiveUserData.diastolicBp[
-                          this.state.ActiveUserData.diastolicBp.length - 1
-                        ],
+                        num_preg:
+                          this.state.ActiveUserData.numPreg[
+                            this.state.ActiveUserData.numPreg.length - 1
+                          ],
+                        glucose_conc:
+                          this.state.ActiveUserData.glucoseConc[
+                            this.state.ActiveUserData.glucoseConc.length - 1
+                          ],
+                        diastolic_bp:
+                          this.state.ActiveUserData.diastolicBp[
+                            this.state.ActiveUserData.diastolicBp.length - 1
+                          ],
                         thickness: { value: "22" },
-                        insulin: this.state.ActiveUserData.insulin[
-                          this.state.ActiveUserData.insulin.length - 1
-                        ],
+                        insulin:
+                          this.state.ActiveUserData.insulin[
+                            this.state.ActiveUserData.insulin.length - 1
+                          ],
                         bmi: { value: this.state.ActiveUserData.bmi },
                         dpf: this.state.ActiveUserData.dfs[
                           this.state.ActiveUserData.dfs.length - 1
@@ -191,9 +201,26 @@ class DoctorDashboard extends React.Component {
   }
 
   setActivePatient(event) {
-    console.log(event.target);
     this.setState({ ActiveUserName: event.target.innerText });
-    console.log(event.target.childNodes[0].innerHTML);
+
+    var currentId = event.target.id;
+
+    var currentPatient = document.getElementById(currentId);
+
+    var allPatients = document.querySelectorAll(".patients--name");
+
+    for (var i = 0; i < allPatients.length; i++) {
+      if (allPatients[i].id !== currentId) {
+        var nameEle = document.getElementById(allPatients[i].id);
+        nameEle.style.backgroundColor = "white";
+        nameEle.style.color = "black";
+      }
+    }
+
+    currentPatient.style.backgroundColor = "var(--primary-color)";
+    currentPatient.style.color = "white";
+    currentPatient.style.margin = "10px";
+
     this.setState(
       { SelectedPatientId: event.target.childNodes[0].innerHTML },
       () => {
@@ -216,21 +243,26 @@ class DoctorDashboard extends React.Component {
               var data = {
                 age: { value: this.state.ActiveUserData.age },
                 bmi: { value: this.state.ActiveUserData.bmi },
-                cholestrol: this.state.ActiveUserData.cholestrol[
-                  this.state.ActiveUserData.cholestrol.length - 1
-                ],
-                diastolicPressure: this.state.ActiveUserData.diastolicPressure[
-                  this.state.ActiveUserData.diastolicPressure.length - 1
-                ],
-                heartRate: this.state.ActiveUserData.heartRate[
-                  this.state.ActiveUserData.heartRate.length - 1
-                ],
-                systolicPressure: this.state.ActiveUserData.systolicPressure[
-                  this.state.ActiveUserData.systolicPressure.length - 1
-                ],
-                glucoseConc: this.state.ActiveUserData.glucoseConc[
-                  this.state.ActiveUserData.glucoseConc.length - 1
-                ],
+                cholestrol:
+                  this.state.ActiveUserData.cholestrol[
+                    this.state.ActiveUserData.cholestrol.length - 1
+                  ],
+                diastolicPressure:
+                  this.state.ActiveUserData.diastolicPressure[
+                    this.state.ActiveUserData.diastolicPressure.length - 1
+                  ],
+                heartRate:
+                  this.state.ActiveUserData.heartRate[
+                    this.state.ActiveUserData.heartRate.length - 1
+                  ],
+                systolicPressure:
+                  this.state.ActiveUserData.systolicPressure[
+                    this.state.ActiveUserData.systolicPressure.length - 1
+                  ],
+                glucoseConc:
+                  this.state.ActiveUserData.glucoseConc[
+                    this.state.ActiveUserData.glucoseConc.length - 1
+                  ],
               };
 
               axios
@@ -252,19 +284,23 @@ class DoctorDashboard extends React.Component {
         // Diabetes
         var data2 = {
           age: { value: this.state.ActiveUserData.age },
-          num_preg: this.state.ActiveUserData.numPreg[
-            this.state.ActiveUserData.numPreg.length - 1
-          ],
-          glucose_conc: this.state.ActiveUserData.glucoseConc[
-            this.state.ActiveUserData.glucoseConc.length - 1
-          ],
-          diastolic_bp: this.state.ActiveUserData.diastolicBp[
-            this.state.ActiveUserData.diastolicBp.length - 1
-          ],
+          num_preg:
+            this.state.ActiveUserData.numPreg[
+              this.state.ActiveUserData.numPreg.length - 1
+            ],
+          glucose_conc:
+            this.state.ActiveUserData.glucoseConc[
+              this.state.ActiveUserData.glucoseConc.length - 1
+            ],
+          diastolic_bp:
+            this.state.ActiveUserData.diastolicBp[
+              this.state.ActiveUserData.diastolicBp.length - 1
+            ],
           thickness: { value: "22" },
-          insulin: this.state.ActiveUserData.insulin[
-            this.state.ActiveUserData.insulin.length - 1
-          ],
+          insulin:
+            this.state.ActiveUserData.insulin[
+              this.state.ActiveUserData.insulin.length - 1
+            ],
           bmi: { value: this.state.ActiveUserData.bmi },
           dpf: this.state.ActiveUserData.dfs[
             this.state.ActiveUserData.dfs.length - 1
@@ -451,18 +487,29 @@ class DoctorDashboard extends React.Component {
     this.setState({ Email: event.target.value });
   }
 
-  toogleSidebar() {
+  tooglePatientsListDesktop() {
     var sidebar = document.getElementById("patientsList");
-    var main = document.getElementById("main-desktop");
+    var button = document.getElementById("nav-buttons-pa-list");
+    var aiButton = document.getElementById("nav-buttons-ai");
+    var text = document.getElementById("pt-text");
+    var aiOverlay = document.getElementById("ai-overlay");
+    var aiText = document.getElementById("ai-text");
 
     if (!this.state.sidebarToogle) {
       sidebar.style.transform = "translate3d(-100%, 0%, 0px)";
-      main.style.marginLeft = "0px";
+      text.style.color = "#535353";
+      button.style.backgroundColor = "transparent";
+      sidebar.style.marginLeft = "0px";
       this.setState({ sidebarToogle: true });
     } else {
       sidebar.style.transform = "translate3d(0%, 0%, 0px)";
-      sidebar.style.left = "0px";
-      main.style.marginLeft = "20%";
+      button.style.backgroundColor = "var(--primary-color)";
+      aiButton.style.backgroundColor = "transparent";
+      aiText.style.color = "#535353";
+      sidebar.style.marginLeft = "300px";
+      text.style.color = "white";
+      aiOverlay.style.opacity = "0";
+      aiOverlay.style.zIndex = "-19";
       this.setState({ sidebarToogle: false });
     }
   }
@@ -476,6 +523,31 @@ class DoctorDashboard extends React.Component {
     } else {
       card.style.top = "-250px";
       this.setState({ desktopAddPatientToogle: false });
+    }
+  }
+
+  toogleDesktopAi() {
+    var aiOverlay = document.getElementById("ai-overlay");
+    var text = document.getElementById("ai-text");
+    var button = document.getElementById("nav-buttons-ai");
+    var paButton = document.getElementById("nav-buttons-pa-list");
+    var sidebar = document.getElementById("patientsList");
+    var paText = document.getElementById("pt-text");
+
+    if (aiOverlay.style.opacity === "1") {
+      aiOverlay.style.opacity = "0";
+      aiOverlay.style.zIndex = "-19";
+      text.style.color = "#535353";
+      button.style.backgroundColor = "transparent";
+    } else {
+      aiOverlay.style.opacity = "1";
+      aiOverlay.style.zIndex = "2";
+      button.style.backgroundColor = "var(--primary-color)";
+      paButton.style.backgroundColor = "transparent";
+      paText.style.color = "#535353";
+      text.style.color = "white";
+      sidebar.style.transform = "translate3d(-100%, 0%, 0px)";
+      this.setState({ sidebarToogle: true });
     }
   }
 
@@ -493,15 +565,6 @@ class DoctorDashboard extends React.Component {
       ) : (
         <div className="doctorDashboard" id="doctorDashboard">
           <div className="desktop-navbar">
-            <div className="desktop-nav-button" onClick={this.toogleSidebar}>
-              <Hamburger
-                color="#000000"
-                size={32}
-                className="menu"
-                backgroundColor="#535353"
-                rounded
-              />
-            </div>
             <div className="add-patient-logout">
               <div
                 className="desktop-add-patient-button"
@@ -540,34 +603,47 @@ class DoctorDashboard extends React.Component {
               </form>
             </div>
           </div>{" "}
-          <div className="patientsList" id="patientsList">
+          <div className="sidebar">
             <div className="backdrop">
               <img src={Logo} alt="logo" id="logo" />
-              <p>My Patients</p>
-              <div className="patientsList--item">
-                {this.state.patients
-                  ? Object.keys(this.state.patients).map((item) => {
-                      return (
-                        <div
-                          className="patients--name"
+              <div className="sidebar--item" style={{margin:"20px 0px 0px 20px"}} id="nav-buttons-pa-list" onClick={this.toogleSidebar}>
+                <img
+                  src={MobilePatientsIcon}
+                  alt="patients"
+                  id="patients-icon"
+                />
+                <p id="pt-text">My Patients</p>
+              </div>
+              <div className="sidebar--item" style={{margin:"20px 0px 0px 20px"}} id="nav-buttons-ai" onClick={this.toogleDesktopAi}>
+                <img src={AiIcon} alt="ai-icon" id="ai-icon" />
+                <p id="ai-text">Ai Predictions</p>
+              </div>
+            </div>
+          </div>
+          <div className="patientsList" id="patientsList">
+            <div className="sidebar--item" style={{backgroundColor: "white"}}>
+              {this.state.patients
+                ? Object.keys(this.state.patients).map((item) => {
+                    return (
+                      <div
+                        className="patients--name"
+                        id={this.state.patients[item].medrecord_id}
+                      >
+                        <img src={ProfileIcon} alt="profile" />
+                        <li
+                          onClick={this.setActivePatient}
+                          key={this.state.patients[item]._id}
                           id={this.state.patients[item].medrecord_id}
                         >
-                          <li
-                            onClick={this.setActivePatient}
-                            key={this.state.patients[item]._id}
-                            id={this.state.patients[item]._id}
-                          >
-                            <span style={{ display: "none" }}>
-                              {this.state.patients[item].medrecord_id}
-                            </span>
-                            {this.state.patients[item].name}
-                          </li>
-                          <img src={ProfileIcon} alt="profile" />
-                        </div>
-                      );
-                    })
-                  : "Empty"}
-              </div>
+                          <span style={{ display: "none" }}>
+                            {this.state.patients[item].medrecord_id}
+                          </span>
+                          {this.state.patients[item].name}
+                        </li>
+                      </div>
+                    );
+                  })
+                : "Empty"}
             </div>
           </div>
           <main id="main">
@@ -782,58 +858,57 @@ class DoctorDashboard extends React.Component {
               </div>
             </div>
           </main>
-          <div className="ai desktop-right-sidebar" id="ai">
-            <h6>Health Predictions</h6>
-            <div className="ai__grid">
-              <div className="ai__grid--item" id="heart">
-                <p>Heart Attack Prediction</p>
-                <div className="prediction--grid">
-                  <img src={HeartIcon} alt="heart-icon" />
-                  {this.state.heartAttackResult !== undefined ? (
-                    <p style={{ fontSize: "0.9vw" }}>
-                      Heart Attack Prediction{" "}
-                      <span>{`${this.state.heartAttackResult}`}</span>
-                    </p>
-                  ) : (
-                    <p>Data not yet entered</p>
-                  )}
+          <div className="grid-popup-overlay" id="ai-overlay">
+            <div className="ai desktop-ai-popup" id="ai">
+              <h6>Health Predictions</h6>
+              <div className="ai__grid">
+                <div className="ai__grid--item" id="heart">
+                  <p>Heart Attack Prediction</p>
+                  <div className="prediction--grid">
+                    <img src={HeartIcon} alt="heart-icon" />
+                    {this.state.heartAttackResult !== undefined ? (
+                      <p>
+                        {/* Heart Attack Prediction{" "} */}
+                        {`${this.state.heartAttackResult}`}
+                      </p>
+                    ) : (
+                      <p>Data not yet entered</p>
+                    )}
+                  </div>
+                </div>
+                <div className="ai__grid--item" id="diabetes">
+                  <p>Diabetes Prediction</p>
+                  <div className="prediction--grid">
+                    <img src={DiabetesIcon} alt="diabetes-icon" />
+                    {this.state.diabetesResult !== undefined ? (
+                      <p>
+                        {/* Diabetes Prediction{" "} */}
+                        <span>{`${this.state.diabetesResult}`}</span>
+                      </p>
+                    ) : (
+                      <p>Data not yet entered</p>
+                    )}
+                  </div>
                 </div>
               </div>
-              <div className="ai__grid--item" id="diabetes">
-                <p>Diabetes Prediction</p>
-                <div className="prediction--grid">
-                  <img src={DiabetesIcon} alt="diabetes-icon" />
-                  {this.state.diabetesResult !== undefined ? (
-                    <p style={{ fontSize: "0.9vw" }}>
-                      Diabetes Prediction{" "}
-                      <span>{`${this.state.diabetesResult}`}</span>
-                    </p>
-                  ) : (
-                    <p>Data not yet entered</p>
-                  )}
+            </div>
+          </div>
+          <div className="add__patient__grid--item" id="add-patient-desktop">
+            <p>Enter the email of the patietnt to be added.</p>
+            <div className="addpatient__form">
+              <form onSubmit={this.onSubmitPatientForm}>
+                <div className="formInput">
+                  <label required>
+                    Email*<span id="result-desktop"></span>
+                  </label>
+                  <input
+                    placeholder="xyz@example.com"
+                    required
+                    onChange={this.onChangeEmail}
+                  />
                 </div>
-              </div>
-              <div
-                className="add__patient__grid--item"
-                id="add-patient-desktop"
-              >
-                <p>Enter the email of the patietnt to be added.</p>
-                <div className="addpatient__form">
-                  <form onSubmit={this.onSubmitPatientForm}>
-                    <div className="formInput">
-                      <label required>
-                        Email*<span id="result-desktop"></span>
-                      </label>
-                      <input
-                        placeholder="xyz@example.com"
-                        required
-                        onChange={this.onChangeEmail}
-                      />
-                    </div>
-                    <button type="submit">Submit</button>
-                  </form>
-                </div>
-              </div>
+                <button type="submit">Submit</button>
+              </form>
             </div>
           </div>
           <nav>

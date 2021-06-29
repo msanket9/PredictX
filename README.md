@@ -68,4 +68,4 @@ Run this command in main (/) directory
 <img src="Images/patient-dash.png" alt="Patients Dashboard">
   
 ## Doctors Dashboard
-<img src="Images/doctorsDash.png" alt="Doctors Dashboard"> 
+<img src="Images/doctorsDash1.png" alt="Doctors Dashboard"> 

@@ -331,10 +331,12 @@ class DoctorDashboard extends React.Component {
       this.state.aiToggle ||
       this.state.addPatientsToogle
     ) {
-      var list = document.getElementById("patientsList");
+ 
+      var list = document.getElementById("mobile-patientsList");
       var dashboard = document.getElementById("doctorDashboard");
       var addPatients = document.getElementById("addpatients");
       var ai = document.getElementById("ai");
+      var aiOverlay = document.getElementById("ai-overlay");
 
       list.style.left = "-400px";
       dashboard.style.overflowY = "auto";
@@ -347,60 +349,77 @@ class DoctorDashboard extends React.Component {
       addPatients.style.left = "-770px";
       this.setState({ addPatientsToogle: false });
 
-      ai.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ aiToggle: false });
     }
   }
 
   tooglePatientsList() {
-    var list = document.getElementById("patientsList");
+    var list = document.getElementById("mobile-patientsList");
     var dashboard = document.getElementById("doctorDashboard");
     var addPatients = document.getElementById("addpatients");
     var ai = document.getElementById("ai");
+    var aiOverlay = document.getElementById("ai-overlay");
 
     if (this.state.addPatientsToogle) {
       addPatients.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ addPatientsToogle: false });
     }
 
     if (this.state.aiToggle) {
-      ai.style.left = "-770px";
       this.setState({ aiToggle: false });
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
     }
 
     if (!this.state.patientListToggle) {
       list.style.left = "0";
       dashboard.style.overflowY = "hidden";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ patientListToggle: true });
     } else {
       list.style.left = "-900px";
       dashboard.style.overflowY = "auto";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ patientListToggle: false });
     }
   }
 
   toogleAddPatients() {
     var addPatients = document.getElementById("addpatients");
-    var list = document.getElementById("patientsList");
+    var list = document.getElementById("mobile-patientsList");
     var dashboard = document.getElementById("doctorDashboard");
     var ai = document.getElementById("ai");
+    var aiOverlay = document.getElementById("ai-overlay");
 
     if (this.state.patientListToggle) {
       list.style.left = "-900px";
       dashboard.style.overflowY = "auto";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ patientListToggle: false });
     }
 
     if (this.state.aiToggle) {
-      ai.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ aiToggle: false });
     }
 
     if (!this.state.addPatientsToogle) {
       addPatients.style.left = "0px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ addPatientsToogle: true });
     } else {
       addPatients.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ addPatientsToogle: false });
     }
   }
@@ -408,25 +427,32 @@ class DoctorDashboard extends React.Component {
   toogleAi() {
     var ai = document.getElementById("ai");
     var addPatients = document.getElementById("addpatients");
-    var list = document.getElementById("patientsList");
+    var list = document.getElementById("mobile-patientsList");
     var dashboard = document.getElementById("doctorDashboard");
+    var aiOverlay = document.getElementById("ai-overlay");
 
     if (this.state.patientListToggle) {
       list.style.left = "-900px";
       dashboard.style.overflowY = "auto";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ patientListToggle: false });
     }
 
     if (this.state.addPatientsToogle) {
       addPatients.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-1";
       this.setState({ addPatientsToogle: false });
     }
 
     if (!this.state.aiToggle) {
-      ai.style.left = "0px";
+      aiOverlay.style.opacity = 1;
+      aiOverlay.style.zIndex = 4;
       this.setState({ aiToggle: true });
     } else {
-      ai.style.left = "-770px";
+      aiOverlay.style.opacity = 0;
+      aiOverlay.style.zIndex = "-19";
       this.setState({ aiToggle: false });
     }
   }
@@ -491,23 +517,22 @@ class DoctorDashboard extends React.Component {
     var sidebar = document.getElementById("patientsList");
     var button = document.getElementById("nav-buttons-pa-list");
     var aiButton = document.getElementById("nav-buttons-ai");
-    var text = document.getElementById("pt-text");
     var aiOverlay = document.getElementById("ai-overlay");
-    var aiText = document.getElementById("ai-text");
 
     if (!this.state.sidebarToogle) {
       sidebar.style.transform = "translate3d(-100%, 0%, 0px)";
-      text.style.color = "#535353";
+      aiButton.style.color = "#535353";
       button.style.backgroundColor = "transparent";
+      button.style.color = "#535353";
       sidebar.style.marginLeft = "0px";
       this.setState({ sidebarToogle: true });
     } else {
       sidebar.style.transform = "translate3d(0%, 0%, 0px)";
       button.style.backgroundColor = "var(--primary-color)";
       aiButton.style.backgroundColor = "transparent";
-      aiText.style.color = "#535353";
+      aiButton.style.color = "#535353";
       sidebar.style.marginLeft = "300px";
-      text.style.color = "white";
+      button.style.color = "white";
       aiOverlay.style.opacity = "0";
       aiOverlay.style.zIndex = "-19";
       this.setState({ sidebarToogle: false });
@@ -528,24 +553,23 @@ class DoctorDashboard extends React.Component {
 
   toogleDesktopAi() {
     var aiOverlay = document.getElementById("ai-overlay");
-    var text = document.getElementById("ai-text");
     var button = document.getElementById("nav-buttons-ai");
     var paButton = document.getElementById("nav-buttons-pa-list");
     var sidebar = document.getElementById("patientsList");
-    var paText = document.getElementById("pt-text");
 
     if (aiOverlay.style.opacity === "1") {
       aiOverlay.style.opacity = "0";
       aiOverlay.style.zIndex = "-19";
-      text.style.color = "#535353";
+      paButton.style.color = "#535353";
+      button.style.color = "#535353";
       button.style.backgroundColor = "transparent";
     } else {
       aiOverlay.style.opacity = "1";
       aiOverlay.style.zIndex = "2";
       button.style.backgroundColor = "var(--primary-color)";
       paButton.style.backgroundColor = "transparent";
-      paText.style.color = "#535353";
-      text.style.color = "white";
+      paButton.style.color = "#535353";
+      button.style.color = "white";
       sidebar.style.transform = "translate3d(-100%, 0%, 0px)";
       this.setState({ sidebarToogle: true });
     }
@@ -606,22 +630,58 @@ class DoctorDashboard extends React.Component {
           <div className="sidebar">
             <div className="backdrop">
               <img src={Logo} alt="logo" id="logo" />
-              <div className="sidebar--item" style={{margin:"20px 0px 0px 20px"}} id="nav-buttons-pa-list" onClick={this.toogleSidebar}>
+              <div
+                className="sidebar--item"
+                style={{ margin: "20px 0px 0px 20px" }}
+                id="nav-buttons-pa-list"
+                onClick={this.toogleSidebar}
+              >
                 <img
                   src={MobilePatientsIcon}
                   alt="patients"
                   id="patients-icon"
                 />
-                <p id="pt-text">My Patients</p>
+                My Patients
               </div>
-              <div className="sidebar--item" style={{margin:"20px 0px 0px 20px"}} id="nav-buttons-ai" onClick={this.toogleDesktopAi}>
+              <div
+                className="sidebar--item"
+                style={{ margin: "20px 0px 0px 20px" }}
+                id="nav-buttons-ai"
+                onClick={this.toogleDesktopAi}
+              >
                 <img src={AiIcon} alt="ai-icon" id="ai-icon" />
-                <p id="ai-text">Ai Predictions</p>
+                Ai Predictions
               </div>
             </div>
           </div>
+          <div className="patientsList" id="mobile-patientsList">
+            <div className="sidebar--item" style={{ backgroundColor: "white" }}>
+              {this.state.patients
+                ? Object.keys(this.state.patients).map((item) => {
+                    return (
+                      <div
+                        className="patients--name"
+                        id={this.state.patients[item].medrecord_id}
+                      >
+                        <img src={ProfileIcon} alt="profile" />
+                        <li
+                          onClick={this.setActivePatient}
+                          key={this.state.patients[item]._id}
+                          id={this.state.patients[item].medrecord_id}
+                        >
+                          <span style={{ display: "none" }}>
+                            {this.state.patients[item].medrecord_id}
+                          </span>
+                          {this.state.patients[item].name}
+                        </li>
+                      </div>
+                    );
+                  })
+                : "Empty"}
+            </div>
+          </div>
           <div className="patientsList" id="patientsList">
-            <div className="sidebar--item" style={{backgroundColor: "white"}}>
+            <div className="sidebar--item" style={{ backgroundColor: "white" }}>
               {this.state.patients
                 ? Object.keys(this.state.patients).map((item) => {
                     return (

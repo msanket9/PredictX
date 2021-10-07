@@ -52,15 +52,14 @@ router.route("/signup").post((req, res) => {
             to: email,
             subject: "Email Account Verification",
             html: `<h2>Please click on the link to activate:</h2>
-                  <a></a>
                   <form name="submitForm" action="${process.env.CLIENT_URL}/email-verified/${token}">
-                  <input type="hidden" name="token" value='value'>
-                  <button type='submit' id="submit" name='activate' value='activate'>Activate</button>
+                    <input type="hidden" name="token" value='value'>
+                    <button type='submit' id="submit" name='activate' value='activate'>Activate</button>
                   </form>
                   <script>
-                  document.getElementById("submit").addEventListener("click", function(event){
-                  event.preventDefault()
-                  });
+                    document.getElementById("submit").addEventListener("click", function(event){
+                      event.preventDefault()
+                    });
                   </script>`,
           };
 
@@ -68,7 +67,7 @@ router.route("/signup").post((req, res) => {
             if (error) {
               return res.status(500).json({
                 success: false,
-                message: `Error: ${error}`,
+                message: `Error: ${error}, Internal server error`,
                 status: 500,
               });
             } else {
@@ -111,15 +110,14 @@ router.route("/signup").post((req, res) => {
             to: email,
             subject: "Email Account Verification",
             html: `<h2>Please click on the link to activate:</h2>
-                  <a></a>
                   <form name="submitForm" action="${process.env.CLIENT_URL}/email-verified/${token}">
-                  <input type="hidden" name="token" value='value'>
-                  <button type='submit' id="submit" name='activate' value='activate'>Activate</button>
+                    <input type="hidden" name="token" value='value'>
+                    <button type='submit' id="submit" name='activate' value='activate'>Activate</button>
                   </form>
                   <script>
-                  document.getElementById("submit").addEventListener("click", function(event){
-                  event.preventDefault()
-                  });
+                    document.getElementById("submit").addEventListener("click", function(event){
+                      event.preventDefault()
+                    });
                   </script>`,
           };
 
@@ -127,7 +125,7 @@ router.route("/signup").post((req, res) => {
             if (error) {
               return res.status(500).json({
                 success: false,
-                message: `Error: ${error}`,
+                message: `Error: ${error}, Internal server error`,
                 status: 500,
               });
             } else {
@@ -168,7 +166,7 @@ router.route("/activate/:token").post((req, res) => {
         if (err) {
           return res.json({
             success: false,
-            message: "Something went wrong...",
+            message: `Error: ${error}, Internal server error`,
             status: 500,
           });
         }
@@ -176,7 +174,7 @@ router.route("/activate/:token").post((req, res) => {
           if (err) {
             return res.json({
               success: false,
-              message: "Something went wrong...",
+              message: `Error: ${error}, Internal server error`,
               status: 500,
             });
           }
@@ -411,15 +409,14 @@ router.route("/forgotpassword").post((req, res) => {
             to: email,
             subject: "Reset PredictX User Account Password",
             html: `<h2>Please click on the link to activate:</h2>
-                  <a></a>
                   <form name="submitForm" method="POST" action="${process.env.CLIENT_URL}/change-password/${token}">
-                  <input type="hidden" name="token" value='value'>
-                  <button type='submit' id="submit" name='activate' value='activate'>Change Password</button>
+                    <input type="hidden" name="token" value='value'>
+                    <button type='submit' id="submit" name='activate' value='activate'>Change Password</button>
                   </form>
                   <script>
-                  document.getElementById("submit").addEventListener("click", function(event){
-                  event.preventDefault()
-                  });
+                    document.getElementById("submit").addEventListener("click", function(event){
+                      event.preventDefault()
+                    });
                   </script>`,
           };
 
@@ -473,15 +470,14 @@ router.route("/forgotpassword").post((req, res) => {
             to: email,
             subject: "Reset PredictX User Account Password",
             html: `<h2>Please click on the link to activate:</h2>
-                  <a></a>
                   <form name="submitForm" method="POST" action="${process.env.CLIENT_URL}/change-password/${token}">
-                  <input type="hidden" name="token" value='value'>
-                  <button type='submit' id="submit" name='activate' value='activate'>Change Password</button>
+                    <input type="hidden" name="token" value='value'>
+                    <button type='submit' id="submit" name='activate' value='activate'>Change Password</button>
                   </form>
                   <script>
-                  document.getElementById("submit").addEventListener("click", function(event){
-                  event.preventDefault()
-                  });
+                    document.getElementById("submit").addEventListener("click", function(event){
+                      event.preventDefault()
+                    });
                   </script>`,
           };
 
